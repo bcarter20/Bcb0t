@@ -9,18 +9,20 @@ require 'love.rb'
 require 'hate.rb'
 require 'informer.rb'
 require 'google.rb'
+require 'random.rb'
 
 bot = Cinch::Bot.new do
   configure do |c|
     c.server   = "irc.freenode.org"
     c.nick     = "Bcb0t"
-    c.channels = ["#thebcblends"]
+    c.channels = ["#miui-us"]
   end
   
   informer
   love
   hate
-  google     
+  google
+  random
   
   class Seen < Struct.new(:who, :where, :what, :time)
 	  def to_s
